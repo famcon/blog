@@ -97,7 +97,7 @@ const GlobalStyle = createGlobalStyle`
       --color-text-2: #d1d1d1;
       --color-text-3: #8c8c8c;
       --color-white: #e6e6e6;
-      --color-nav-bar: rgba(29, 29, 29, 0.7);
+      --color-nav-bar: rgb(109 103 103 / 70%);
       --color-nav-border: rgba(255, 255, 255, 0.2);
       --color-category-button: #484848;
       --color-background: #1c1c1c;
@@ -144,6 +144,24 @@ const GlobalStyle = createGlobalStyle`
 
   :lang(ko) {
     word-break: keep-all; 
+  }
+
+  ul,
+  ol {
+    line-height: 1.7;
+    margin: 0;
+  }
+  
+  .cOrybA {
+    line-height: 1;
+  }
+
+  ul {
+    list-style: revert;
+  }
+
+  ol {
+    list-style-type: decimal;
   }
 
   ul, ol, li, dl, dt, dd, h1, h2, h3, h4, h5, h6, hgroup, p, blockquote, figure, form, fieldset, input, legend, pre, abbr, button {
