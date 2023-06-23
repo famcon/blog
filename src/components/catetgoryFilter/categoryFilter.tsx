@@ -133,6 +133,7 @@ const CategoryUl = styled.ul`
   overflow-x: auto;
   -ms-overflow-style: none;
   scrollbar-width: none;
+  line-height: 1;
 
   li + li {
     margin-left: 6px;

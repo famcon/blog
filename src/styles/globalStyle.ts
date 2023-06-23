@@ -151,10 +151,6 @@ const GlobalStyle = createGlobalStyle`
     line-height: 1.7;
     margin: 0;
   }
-  
-  .cOrybA {
-    line-height: 1;
-  }
 
   ul {
     list-style: revert;
