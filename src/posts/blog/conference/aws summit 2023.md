@@ -1,6 +1,6 @@
 ---
 title: "AWS 2023 Summit"
-category: "NodeJS"
+category: "Conference"
 date: "2023-06-01"
 desc: "aws summit 2023 참가 후기"
 thumbnail: "../images/aws summit 2023.jpg"
