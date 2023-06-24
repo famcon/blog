@@ -35,7 +35,7 @@ const GlobalStyle = createGlobalStyle`
     --text-sm: 0.75rem;
     --text-base: 1rem;
     --text-md: 1.125rem;
-    --text-title: 1.25rem;
+    --text-title: 2rem;
     --text-lg: 1.5rem; 
     --text-xl: 3rem;
 
@@ -97,8 +97,8 @@ const GlobalStyle = createGlobalStyle`
       --color-text-2: #d1d1d1;
       --color-text-3: #8c8c8c;
       --color-white: #e6e6e6;
-      --color-nav-bar: rgb(109 103 103 / 70%);
-      --color-nav-border: rgba(255, 255, 255, 0.2);
+      --color-nav-bar: rgb(255 255 255 / 0%);
+      --color-nav-border: rgb(177 80 234 / 87%);
       --color-category-button: #484848;
       --color-background: #1c1c1c;
       --color-post-background: #1c1c1c;

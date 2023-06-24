@@ -100,11 +100,20 @@ const Content = styled.div`
 `
 
 const Title = styled.h1`
+  @font-face {
+    font-family: "KCCChassam";
+    src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302@1.0/KCCChassam.woff2")
+      format("woff2");
+    font-weight: normal;
+    font-style: normal;
+  }
+
   z-index: 9999;
   padding: 0;
   border: none;
   font-size: var(--text-title);
   font-weight: var(--font-weight-semi-bold);
+  font-family: "KCCChassam";
   color: var(--color-text);
 
   a {
