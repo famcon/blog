@@ -1,7 +1,7 @@
 ---
 title: "File System in NodeJS"
 category: "NodeJS"
-date: "2023-01-01"
+date: "2022-12-01"
 desc: "NodeJS 내장 모듈 fs에 대하여 정리"
 thumbnail: "../images/fs.png"
 alt: "alt"

@@ -1,7 +1,7 @@
 ---
 title: "DesingPattern with JS"
 category: "Javascript"
-date: "2022-12-01"
+date: "2023-05-01"
 desc: "자바스크립트로 정리한 디자인패턴 3가지"
 thumbnail: "../images/design-patterns-logo-2.png"
 alt: "alt"
