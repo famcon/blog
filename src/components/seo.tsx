@@ -78,7 +78,7 @@ const SEO: React.FC<SEOProps> = ({ title, desc = "", image }) => {
           },
           {
             name: "google-site-verification",
-            content: "googlea92bc4c62322e44a.html",
+            content: "-VotWFcrrhgItHK-Bskxa9cCUaCfREvBjQ-ZsSZRRp8",
           },
         ] as Meta
       }
