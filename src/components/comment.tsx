@@ -13,7 +13,7 @@ type ThemeMode = typeof LIGHT_THEME | typeof DARK_THEME
 
 const Comment = () => {
   const site = useSiteMetadata()
-  const { repo } = site.utterances ?? { repo: undefined }
+  const repo = "famcon/comment"
   const theme = useContext(ThemeContext)
   const containerRef = useRef<HTMLDivElement>(null)
   const isUtterancesCreated = useRef(false)
