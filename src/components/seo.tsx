@@ -76,6 +76,10 @@ const SEO: React.FC<SEOProps> = ({ title, desc = "", image }) => {
             property: "twitter:image",
             content: ogImageUrl,
           },
+          {
+            name: "google-site-verification",
+            content: "googlea92bc4c62322e44a.html",
+          },
         ] as Meta
       }
     />
