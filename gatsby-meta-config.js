@@ -20,11 +20,11 @@ const metaConfig = {
   title: "🟪 PUR-PLE",
   description: `PUR-PLE's Blog`,
   author: "PUR-PLE",
-  siteUrl: "https://gatsby-starter-apple.netlify.app",
+  siteUrl: "https://pur-ple.netlify.app",
   lang: "ko",
   utterances: "pur-ple/gatsby-starter-apple-comment",
   links: {
-    github: "https://github.com/sungik-choi/gatsby-starter-apple",
+    github: "https://github.com/famcon/blog",
   },
   favicon: "src/images/icon.png",
 }
