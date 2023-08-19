@@ -61,6 +61,8 @@ DBMS는 command 요청을 받으면 즉각 데이터를 변경하지 않고, 로
 
 <img src="..//images/sql_levelup/img.png">
 
+<br>
+
 ### 파서
 
 파서는 SQL 구문을 검사합니다.
@@ -111,7 +113,7 @@ from student;
 
 <br>
 
-# WHERE이 아닌 SELECT 에서 조건 분기를 하기
+# WHERE이 아닌 SELECT 에서 조건 분기
 
 <br>
 
@@ -154,15 +156,19 @@ from student;
 
 <img src="../images/sql_levelup/img_3.png">
 
+<br>
+
 위와 같은 데이터가 있을 때 
 
 아래와 같은 출력을 만들기 위해선 어떻게 해야할 까요?
 
 <img src="../images/sql_levelup/img_2.png">
 
+<br>
+
 
 서브쿼리와 union을 사용하는 방법이 있겠지만 <br>
-case를 사용하면 단 한번의 쿼리 그리고 숏쿼리가 가능해집니다.
+case를 사용하면 단 한번의 쿼리 그리고 숏쿼리로 가능합니다.
 
 ```roomsql
 select
@@ -204,27 +210,6 @@ group by prefecture;
 
 <br>
 
-# IF문
-
-<br>
-
-책에 나오지 않는 내용이지만, case 뿐 아니라 if문도 사용이 가능하다는 것을 알게되어
-함께 정리했습니다.
-
-```roomsql
-select id,
-       if(nickname = 'a', '알파', null) as korean_name,
-       if(nickname = 'a', 'alpha', null) as english_name,
-       if(nickname = 'b', '베타', null) as korean_name,
-       if(nickname = 'b', 'beta', null) as english_name
-from student
-group by nickname;
-```
-
-<br>
-
-<br>
-
 # 윈도우 함수
 
 <br>
@@ -245,6 +230,8 @@ group by nickname;
 만약 위 쿼리의 결과가
 
 <img src="../images/sql_levelup/img_1.png">
+
+<br>
 
 와 같다면  
 
@@ -286,7 +273,7 @@ PARTION BY와 동일하게 사용하시면 됩니다.
 
 <br>
 
-결합은 거의 100% 실무에서 사용이 될 수 밖에 없는데요.
+결합은 실무에서 무조건적으로 사용하게 되는데요.
 
 결합의 성능이 좋으려면 구동 테이블의 레코드 한개에 내부 테이블의 레코드 한개가 대응하고, 해당 레코드를 내부 테이블의 인덱스를 사용해 찾을 수 있는 경우가 만족되어야 합니다.
 
