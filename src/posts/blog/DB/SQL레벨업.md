@@ -14,7 +14,7 @@ sql공부를 하려고 서점에서 책을 찾던 중 표지가 예뻐 보게되
 SQL 첫걸음 이라는 책이 1판인 것 같은데, 평소 SQL을 사용하여 쿼리를 작성해왔지만
 간단한 CRUD만 작성해오고 있어서, 진짜로 레벨업을 원하는 사람들에게 필요한 책인 것 같습니다.
 
-책을 읽고, 기초적인 내용보단 '이게 이런 원리였구나' 혹은 '이런 것도 있었어?' 하는 것들을 정리하였습니다.
+책을 읽고 '이게 이런 원리였구나' 혹은 '이런 것도 있었어?' 하는 것들을 정리하였습니다.
 
 
 <br>
@@ -95,7 +95,7 @@ syntax 에러가 나는 것은 모두 파서에서 발견된 에러입니다.
 
 case식은 switch와 유사하다고 생각하면 이해하기 쉽습니다.
 
-```roomsql
+```sql
 select
     CASE WHEN name = 'a' then '알파'
          WHEN name =' b' then '베타'
@@ -104,9 +104,27 @@ select
 from student;
 ```
 
-위 쿼리를 설명하자면, `student`라는 테이블에 name 컬럼의 값이 `a`라면 `알파`를 출력,
+`student`라는 테이블에 name 컬럼의 값이 `a`라면 `알파`를 출력,
 `b`라면 `베타`를 출력
 이외에는 `감마`를 출력하는 쿼리입니다.
+
+만약, case를 쓰지 않았다면 다음과 같은 쿼리를 사용할 수 밖에 없는데요.
+
+```sql
+select '알파'
+from student
+where name = 'a'
+union
+select '베타'
+from student
+where name = 'b'
+union
+select '감마'
+from student
+where name != 'a' and name != 'b'
+```
+
+쿼리의 가독성도 떨어지고 총 세번의 쿼리가 요청되어 훨씬 비효율적일 거라고 예상됩니다.
 
 
 <br>
@@ -117,7 +135,7 @@ from student;
 
 <br>
 
-```roomsql
+```sql
 select created_at as time
 from student
 where nickname = 'a'
@@ -135,7 +153,7 @@ where nickname = 'b';
 
 해서, 다음과 같이 CASE를 사용하여 한번의 쿼리로 개선할 수 있습니다.
 
-```roomsql
+```sql
 select 
     case when nickname = 'a' then created_at
          when nickname = 'b' then modified_at
@@ -170,7 +188,7 @@ from student;
 서브쿼리와 union을 사용하는 방법이 있겠지만 <br>
 case를 사용하면 단 한번의 쿼리 그리고 숏쿼리로 가능합니다.
 
-```roomsql
+```sql
 select
     prefecture,
     sum(case when sex='남' then 인구 else 0 end) as '남자',
@@ -220,7 +238,7 @@ group by prefecture;
 
 GROUP BY에서 자르기만 진행하고 집약은 빠진 기능이라고 보시면 됩니다.
 
-```roomsql
+```sql
 select 
     count(*)
 from student
@@ -235,7 +253,7 @@ group by nickname;
 
 와 같다면  
 
-```roomsql
+```sql
 select 
     count(*) over (partition by nickname)
 from student;
@@ -283,7 +301,7 @@ PARTION BY와 동일하게 사용하시면 됩니다.
 
 왜냐하면 내부 테이블이 클수록 인덱스 사용으로 인한 반복 생략 효과가 커지기 때문입니다.
 
-> 해서, 우리는 인덱스를 설정할 때 어떤 테이블을 내부 테이블로 하고, 어떤 결합 키에 인덱스를 작성해야 하는지를 초기 단계에 잘 고민해야합니다.
+> 그렇기에 우리는 인덱스를 설정할 때 어떤 테이블을 내부 테이블로 하고, 어떤 결합 키에 인덱스를 작성해야 하는지를 초기 단계에 잘 고민해야합니다.
 
 <br>
 
