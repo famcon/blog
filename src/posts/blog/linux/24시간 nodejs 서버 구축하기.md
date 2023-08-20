@@ -1,7 +1,7 @@
 ---
 title: "24시간 nodejs 서버 구축하기"
 category: "linux"
-date: "2023-08-02"
+date: "2023-08-03"
 desc: "pm2 사용하지 않고 리눅스에 nodejs 서버를 구축해보자"
 thumbnail: "../images/linux/linux.jpeg"
 alt: "alt"
@@ -38,7 +38,11 @@ pm2와 systemd 조합으로 재부팅 시 pm2가 자동으로 서버들을 start
 
 <br>
 
+<br>
+
 # 히스토리 관리
+
+<br>
 
 `history`는 최근에 많이 사용하고 있는 명령언데요.
 
@@ -50,7 +54,7 @@ pm2와 systemd 조합으로 재부팅 시 pm2가 자동으로 서버들을 start
 ```shell
 vi /etc/profile
 
-# HISTTIMEFORMAT="%Y-%m-%d_%H:%M:%S [CMD]:" 입력
+### HISTTIMEFORMAT="%Y-%m-%d_%H:%M:%S [CMD]:" 입력
 
 source /etc/profile
 ```
@@ -58,7 +62,11 @@ source /etc/profile
 
 <br>
 
+<br>
+
 # 기본 패키지 설치
+
+<br>
 
 ```shell
 sudo apt update
@@ -92,7 +100,11 @@ nohup은 프로세스를 실행한 터미널의 세션 연결이 끊기더라도
 
 <br>
 
+<br>
+
 # 시간 설정
+
+<br>
 
 ```shell
 sudo ln -sf /usr/share/zoneinfo/Asia/Seoul /etc/localtime
@@ -128,7 +140,11 @@ sudo systemctrl start chrony
 
 <br>
 
+<br>
+
 # systemd
+
+<br>
 
 드디어 마지막 과제에 도달했습니다.
 
@@ -145,7 +161,7 @@ deamon은 background에서 실행이 되는  프로세스입니다.
 ps -ef | grep index
 <br>
 
-# pid 확인
+### pid 확인
 
 sudo kill {위에서 확인한 pid}
 ```
@@ -218,7 +234,7 @@ journalctl -x -e
 (서비스이름).service 파일을 만들어줍니다.
 
 ```shell
-# index.service
+### index.service
 [Unit]
 Description=nodejs 테스트
 
