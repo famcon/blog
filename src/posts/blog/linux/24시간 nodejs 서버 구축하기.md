@@ -36,6 +36,8 @@ pm2와 systemd 조합으로 재부팅 시 pm2가 자동으로 서버들을 start
 이때 공부한 systemd가 신기해서 이를 사용하여 리눅스에 nodejs 서버를 한번 띄워보고자 합니다.
 단순 system 사용기 라기 보단, 리눅스를 처음부터 세팅해서 nodejs서버를 안전하게 띄우는 걸 쭉 정리해 볼 생각입니다.
 
+<br>
+
 # 히스토리 관리
 
 `history`는 최근에 많이 사용하고 있는 명령언데요.
@@ -53,6 +55,8 @@ vi /etc/profile
 source /etc/profile
 ```
 
+
+<br>
 
 # 기본 패키지 설치
 
@@ -85,6 +89,8 @@ nohup은 프로세스를 실행한 터미널의 세션 연결이 끊기더라도
 해서, 두개를 함께 사용합니다.
 
 하지만 이 역시 재부팅시 실행했던 프로세스가 자동으로 재실행되지는 않기에 저희는 systemd가 필요한것입니다.
+
+<br>
 
 # 시간 설정
 
@@ -120,6 +126,8 @@ sudo systemctrl start chrony
 
 벌써 여기서 systemd를 잠깐이나마 사용하게 되었네요.
 
+<br>
+
 # systemd
 
 드디어 마지막 과제에 도달했습니다.
@@ -135,6 +143,8 @@ deamon은 background에서 실행이 되는  프로세스입니다.
 
 ```shell
 ps -ef | grep index
+<br>
+
 # pid 확인
 
 sudo kill {위에서 확인한 pid}
